@@ -19,7 +19,7 @@ jobs:
       - name: Setup .NET 9
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '9.0.x' # Uses latest .NET 9 version
+          dotnet-version: '9.0.x'
 
       - name: Restore dependencies
         run: dotnet restore
@@ -28,4 +28,4 @@ jobs:
         run: dotnet build --no-restore --configuration Release
 
       - name: Run unit tests
-        run: dotnet test --no-build --verbosity normal
+        run: dotnet test --no-build --configuration Release --verbosity normal
